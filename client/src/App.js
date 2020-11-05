@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   useEffect(() => {
@@ -8,7 +9,9 @@ function App() {
     })
   })
   return (
-    <h1>Hello World</h1>
+    <>
+    <Navbar />
+    </>
   );
 }
 
