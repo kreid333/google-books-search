@@ -23,11 +23,11 @@ mongoose.connect("mongodb://localhost/googleBooks", {
 const connection = mongoose.connection;
 
 connection.on("connected", () => {
-    console.log("Connected!");
+    console.log("Mongoose successfully connected!");
 })
 
 connection.on("error", (err) => {
-    console.log(err);
+    console.log("Mongoose connection error: ", err);
 })
 
 // LISTENING ON PORT
