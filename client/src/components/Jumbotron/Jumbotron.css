@@ -1,0 +1,10 @@
+.main-image {
+  background-image: url("./pexels-pixabay-159711.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-text {
+    color: white;
+}
