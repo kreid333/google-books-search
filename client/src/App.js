@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
+import Search from "./pages/Search";
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,11 @@ function App() {
         <div className="row">
           <div className="col-sm-12">
             <Jumbotron />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-12">
+            <Search />
           </div>
         </div>
       </div>
