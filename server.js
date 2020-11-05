@@ -32,6 +32,13 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
+// TEST ROUTE
+app.get("/api/config", (req, res) => {
+  res.json({
+    success: true,
+  });
+});
+
 // LISTENING ON PORT
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
