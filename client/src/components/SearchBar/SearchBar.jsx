@@ -6,7 +6,7 @@ const SearchBar = () => {
       <div className="card-body">
         <h5 className="card-title">Book Search</h5>
         <p className="card-text">Book</p>
-        <input type="text" className="form-control"/>
+        <input type="text" className="form-control" placeholder="Book Name"/>
         <button className="btn btn-success float-right mt-3">Search</button>
       </div>
     </div>

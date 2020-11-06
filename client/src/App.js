@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Search from "./pages/Search";
 import "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Saved from "./pages/Saved";
 
 function App() {
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
             <div className="col-sm-12">
               <Switch>
                 <Route exact path="/search" component={Search} />
-                <Route exact path="/saved" component="" />
+                <Route exact path="/saved" component={Saved} />
                 <Route path="/" component={Search} />
               </Switch>
             </div>
