@@ -1,6 +1,7 @@
 // DEFINING VARIABLES
 const express = require("express");
 const mongoose = require("mongoose");
+const router = require("./controllers/apiRoutesController");
 
 const PORT = process.env.PORT || 3001;
 
@@ -31,6 +32,10 @@ connection.on("connected", () => {
 connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
+
+// API ROUTES
+const apiRoutes = require("./controllers/apiRoutesController");
+app.use(apiRoutes);
 
 // TEST ROUTE
 app.get("/api/config", (req, res) => {
