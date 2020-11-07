@@ -19,6 +19,7 @@ const Results = ({ data, display }) => {
     axios
       .post("/api/books", bookData)
       .then(() => {
+        alert("Book successfully saved!");
         console.log("Successfully saved book!");
       })
       .catch((err) => {
@@ -42,15 +43,17 @@ const Results = ({ data, display }) => {
                     SAVE
                   </button>
                   <a href={book.volumeInfo.infoLink} target="_blank">
-                    <button
-                      className="float-right mr-2 btn btn-outline-success save"
-                      onClick={console.log(book)}
-                    >
+                    <button className="float-right mr-2 btn btn-outline-success save">
                       VIEW
                     </button>
                   </a>
                   <h4>{book.volumeInfo.title}</h4>
-                  <p>Written by: {book.volumeInfo.authors.join(", ")}</p>
+                  <p>
+                    Written by:{" "}
+                    {book.volumeInfo.authors > 1
+                      ? book.volumeInfo.authors.join(", ")
+                      : book.volumeInfo.authors}
+                  </p>
                   <div className="row">
                     <div className="col-sm-2">
                       <img
