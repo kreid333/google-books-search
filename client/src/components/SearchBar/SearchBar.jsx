@@ -5,6 +5,7 @@ import Results from "../Results/Results";
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [bookList, setBookList] = useState([]);
+  const [resultsDisplay, setResultsDisplay] = useState("none");
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ const SearchBar = () => {
         `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}?printType=books&key=AIzaSyCtonvpysLv0nZos107pXQAbH2sm8m_PIo`
       )
       .then((response) => {
+        setResultsDisplay("block");
         console.log(response.data.items);
         setBookList(response.data.items);
       })
@@ -41,7 +43,7 @@ const SearchBar = () => {
         </div>
       </div>
       <br />
-      <Results data={bookList}/>
+      <Results data={bookList} display={resultsDisplay} />
     </>
   );
 };
