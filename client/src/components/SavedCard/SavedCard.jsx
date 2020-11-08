@@ -15,6 +15,17 @@ const SavedCard = () => {
         if (err) throw err;
       });
   });
+
+  const handleDelete = (event) => {
+    axios
+      .delete(`/api/books/${event.target.id}`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
+  };
   return (
     <div className="card">
       <div className="card-body">
@@ -22,8 +33,15 @@ const SavedCard = () => {
         {savedBooks.map((book) => {
           return (
             <>
-              <div className="card" key={book.id}>
+              <div className="card" key={book._id}>
                 <div className="card-body">
+                  <button
+                    className="float-right btn btn-outline-success save"
+                    id={book._id}
+                    onClick={handleDelete}
+                  >
+                    DELETE
+                  </button>
                   <a href={book.link} target="_blank">
                     <button className="float-right mr-2 btn btn-outline-success save">
                       VIEW
@@ -33,15 +51,10 @@ const SavedCard = () => {
                   <p>Written by: {book.authors.join(", ")}</p>
                   <div className="row">
                     <div className="col-sm-2">
-                      <img
-                        src={book.image ? book.image : noImage}
-                        alt="Book"
-                      />
+                      <img src={book.image ? book.image : noImage} alt="Book" />
                     </div>
                     <div className="col-sm-10">
-                      <p className="float-left">
-                        {book.description}
-                      </p>
+                      <p className="float-left">{book.description}</p>
                     </div>
                   </div>
                 </div>

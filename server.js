@@ -1,7 +1,6 @@
 // DEFINING VARIABLES
 const express = require("express");
 const mongoose = require("mongoose");
-const router = require("./controllers/apiRoutesController");
 
 const PORT = process.env.PORT || 3001;
 
@@ -38,11 +37,11 @@ const apiRoutes = require("./controllers/apiRoutesController");
 app.use(apiRoutes);
 
 // TEST ROUTE
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
-});
+// app.get("/api/config", (req, res) => {
+//   res.json({
+//     success: true,
+//   });
+// });
 
 // LISTENING ON PORT
 app.listen(PORT, () => {

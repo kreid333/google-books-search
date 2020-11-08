@@ -8,11 +8,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Saved from "./pages/Saved";
 
 function App() {
-  useEffect(() => {
-    axios.get("/api/config").then((response) => {
-      console.log(response.data);
-    });
-  });
+  // useEffect(() => {
+  //   axios.get("/api/config").then((response) => {
+  //     console.log(response.data);
+  //   });
+  // });
   return (
     <Router>
       <>

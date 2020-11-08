@@ -15,7 +15,6 @@ const SearchBar = () => {
       )
       .then((response) => {
         setResultsDisplay("block");
-        console.log(response.data.items);
         setBookList(response.data.items);
       })
       .catch((err) => {

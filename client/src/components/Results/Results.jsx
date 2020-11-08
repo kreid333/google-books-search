@@ -20,7 +20,6 @@ const Results = ({ data, display }) => {
       .post("/api/books", bookData)
       .then(() => {
         alert("Book successfully saved!");
-        console.log("Successfully saved book!");
       })
       .catch((err) => {
         if (err) throw err;
@@ -33,7 +32,7 @@ const Results = ({ data, display }) => {
         {data.map((book) => {
           return (
             <>
-              <div className="card" key={book.id}>
+              <div className="card" key={book.etag}>
                 <div className="card-body">
                   <button
                     className="float-right btn btn-outline-success save"

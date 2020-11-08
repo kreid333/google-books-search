@@ -27,4 +27,16 @@ router.post("/api/books", (req, res) => {
     });
 });
 
+router.delete("/api/books/:id", (req, res) => {
+  db.Books.findByIdAndDelete(req.params.id)
+    .then((response) => {
+      res.json(response);
+    })
+    .catch((err) => {
+      if (err) {
+        throw err;
+      }
+    });
+});
+
 module.exports = router;
