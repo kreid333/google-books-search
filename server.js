@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use(express.static("client/build"));
 
 // ESTABLISHING MONGOOSE CONNECTION
-mongoose.connect("mongodb://localhost/googleBooks", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googleBooks", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
